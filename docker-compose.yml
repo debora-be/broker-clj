@@ -1,0 +1,30 @@
+version: "3"
+services: 
+  db:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_DB: "postgres"
+      POSTGRES_USER: "postgres"
+      POSTGRES_PASSWORD: "postgres"
+    ports: 
+      - 5432:5432
+    volumes:
+      # - ./postgres-data:/var/lib/postgresql/data
+      #  - ./resources/database/tables.sql:/docker-entrypoint-initdb.d/tables.sql
+      - ./resources/database:/docker-entrypoint-initdb.d
+  app:
+    build: .
+    depends_on: 
+      - db
+    ports: 
+      - 3000:3000
+
+  unit-tests:
+    image: clojure:openjdk-17-lein 
+    command: lein test 
+    volumes: 
+      - .:/tmp
+
+    
+    
