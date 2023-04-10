@@ -1,3 +1,6 @@
+CREATE DOMAIN sex_enum AS CHAR(1)
+    CHECK (VALUE IN ('f', 'F', 'm', 'M', 'n', 'N'));
+
 -- Brokers table
 CREATE TABLE brokers (
     broker_id VARCHAR NOT NULL,
@@ -25,7 +28,7 @@ CREATE TABLE policies (
     created_at TIMESTAMP,
     date_of_birth VARCHAR NOT NULL,
     name VARCHAR NOT NULL,
-    sex VARCHAR NOT NULL,
+    sex sex_enum NOT NULL,
     PRIMARY KEY (policy_id),
     FOREIGN KEY (broker_id) REFERENCES brokers (broker_id)
 );
