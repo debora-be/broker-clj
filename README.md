@@ -4,21 +4,29 @@
 A documentação dos _endpoints_ fornece detalhes sobre os parâmetros e _payloads_ de todas as etapas de autenticação e criação, possibilitando testar as requisições em tempo real.
 <br></br>
 # Funcionamento
-Com o conteúdo do projeto salvo localmente, 
+Com o conteúdo do projeto salvo localmente,
+</br> 
 <br>`git clone git@github.com:debora-be/broker-clj.git`</br>
+</br>
 `cd broker-clj`</br>
+</br>
 Adicionamos o arquivo `profiles.clj` à pasta raiz do projeto. Se o seu Postgres estiver localmente conectado à porta :5432, será necessário desabilitá-lo com o comando:
+</br>
 <br>`systemctl stop postgresql`</br>
+</br>
 Com todos estes pré-requisitos, montamos a imagem no Docker:
+</br>
 <br>`docker compose build`</br>
+</br>
 Para acessar a API Broker de agora em diante, simplesmente subimos o contêiner:
+</br>
 <br>`docker compose up`</br>
 </br>
 # Requisições
 [Podemos acessar os _endpoints_  pela documentação interativa](http://localhost:3000/swagger), ou por algum _client_ - como Insomnia ou Postman - através das rotas:
 <br></br>
 
-`POST http://localhost:3000/brokers`</br>
+**POST** `http://localhost:3000/brokers`</br>
 Content-Type: application/json
 ```json
 {
@@ -27,7 +35,7 @@ Content-Type: application/json
 }
 ```
 
-`POST http://localhost:3000/:broker_id/quotes`</br>
+**POST** `http://localhost:3000/:broker_id/quotes`</br>
 Content-Type: application/json
 ```json
 {
@@ -36,7 +44,7 @@ Content-Type: application/json
 }
 ```
 
-`POST http://localhost:3000/:broker_id/policies`</br>
+**POST** `http://localhost:3000/:broker_id/policies`</br>
 Content-Type: application/json
 ```json
 {
@@ -47,7 +55,7 @@ Content-Type: application/json
 }
 ```
 
-`GET http://localhost:3000/brokers/:broker_id/policies?policy_id=policy_id`</br>
+**GET** `http://localhost:3000/brokers/:broker_id/policies?policy_id=policy_id`</br>
 Content-Type: application/json </br>
 query_params = policy_id
 <br></br>
