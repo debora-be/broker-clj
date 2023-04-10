@@ -1,4 +1,5 @@
-(ns broker.handlers
+(ns broker.handlers 
+  "handlers for broker api"
   (:require [org.httpkit.server :as server]
             [org.httpkit.server :as client]
             [compojure.core :refer :all]
