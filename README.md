@@ -26,7 +26,8 @@ Para acessar a API Broker de agora em diante, simplesmente subimos o contêiner:
 Podemos acessar os _endpoints_ através de algum _client_ - como Insomnia, Postman ou Curl - através das rotas:
 <br></br>
 
-**POST** `http://localhost:3000/brokers` </br>
+**POST** </br>
+`http://localhost:3000/brokers` </br>
 Content-Type: application/json
 ```json
 {
@@ -34,35 +35,86 @@ Content-Type: application/json
   "last_name" : "Tuesday"
 }
 ```
+_RESPONSE_
+```json
+{
+		"broker_id": "71161e53-3c4d-45a5-b499-18650715b995",
+		"created_at": "2023-04-10T18:00:41Z",
+		"first_name": "Ruby",
+		"last_name": "Tuesday"
+	}
+```
 
-**POST** `http://localhost:3000/:broker_id/quotes` </br>
+**POST** </br>
+`http://localhost:3000/:broker_id/quotes` </br>
 Content-Type: application/json
 ```json
 {
-  "age": 52,
-  "sex": "F"
+    "age": 29,
+    "sex": "f"
 }
 ```
+_RESPONSE_
+```json
+{
+		"quotation_id": "515341a1-a5b8-4af3-915d-931deeb7e919",
+		"broker_id": "71161e53-3c4d-45a5-b499-18650715b995",
+		"created_at": "2023-04-10T18:03:28Z",
+		"expire_at": "2023-04-10",
+		"price": 86.26
+	}
+```
 
-**POST** `http://localhost:3000/:broker_id/policies` </br>
+**POST** </br>
+`http://localhost:3000/:broker_id/policies` </br>
 Content-Type: application/json
 ```json
 {
-  "quotation_id":  "8a964dfa-4640-4ad4-824c-20ab097a983f",
-  "name": "Ten",
-  "sex": "f",
-  "date_of_birth": "1987-01-01"
+    "quotation_id": "515341a1-a5b8-4af3-915d-931deeb7e919",
+    "name": "Mighty Maria",
+    "sex": "f",
+    "date_of_birth": "1993-06-26"
 }
 ```
+_RESPONSE_
+```json
+{
+		"policy_id": "307ff969-f56c-47dd-b0a3-f2d62ed45e87",
+		"broker_id": "71161e53-3c4d-45a5-b499-18650715b995",
+		"created_at": "2023-04-10T18:04:31Z",
+		"date_of_birth": "1993-06-26",
+		"name": "Mighty Maria",
+		"sex": "f"
+	}
+```
 
-**GET** `http://localhost:3000/brokers/:broker_id/policies?policy_id=policy_id` </br>
+**GET** </br>
+`http://localhost:3000/brokers/:broker_id/policies?policy_id=policy_id` </br>
 Content-Type: application/json </br>
 query_params = policy_id
-<br></br>
+_RESPONSE_
+```json
+{
+	"quotation_id": "515341a1-a5b8-4af3-915d-931deeb7e919",
+	"name": "Mighty Maria",
+	"sex": "f",
+	"date_of_birth": "1993-06-26",
+	"id": "307ff969-f56c-47dd-b0a3-f2d62ed45e87"
+}
+```
+</br>
 
 # Extras
 Acesso à linha de comando pelo Docker:
 </br>
 <br>`docker exec -it broker-clj-app-1 bash` </br>
+</br>
+Postgres pela linha de comando:
+</br>
+<br>`docker exec -it broker-clj-db-1 psql -U postgres` </br>
+</br>
+Conectar à _database_ dentro do Postgres:
+</br>
+<br>`\c postgres` </br>
 </br>
 Os testes unitários são rodados automaticamente quando o contêiner sobe (_docker compose up_); dessa mesma forma é criada a _database_, totalizando três contêineres.
