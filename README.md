@@ -62,8 +62,13 @@ query_params = policy_id
 
 # Extras
 Acesso à linha de comando pelo Docker:
+</br>
 <br>`docker exec -it broker-clj-app-1 bash`</br>
+</br>
 Para rodar os testes unitários:
+</br>
 <br>`lein test`</br>
+</br>
 E o Repl, para acessar diretamente os _namespaces_ do projeto:
+</br>
 <br>`lein repl`</br>
