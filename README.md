@@ -65,10 +65,4 @@ Acesso à linha de comando pelo Docker:
 </br>
 <br>`docker exec -it broker-clj-app-1 bash` </br>
 </br>
-Para rodar os testes unitários:
-</br>
-<br>`lein test`</br>
-</br>
-E o Repl, para acessar diretamente os _namespaces_ do projeto:
-</br>
-<br>`lein repl`</br>
+Os testes unitários são rodados automaticamente quando o contêiner sobe (_docker compose up_); dessa mesma forma é criada a _database_, totalizando três contêineres.
