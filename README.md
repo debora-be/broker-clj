@@ -1,8 +1,6 @@
 # Detalhes
 **Broker** é uma API que conecta **Parceiras Corretoras** à **Seguradora**, tornando possível gerar apólices de acordo com as informações postadas. Após autenticação, a Parceira Corretora (Broker) tem acesso à área de criação de cotações e apólices.
 <br></br>
-A documentação dos _endpoints_ fornece detalhes sobre os parâmetros e _payloads_ de todas as etapas de autenticação e criação, possibilitando testar as requisições em tempo real.
-<br></br>
 # Funcionamento
 Com o conteúdo do projeto salvo localmente,
 </br> 
