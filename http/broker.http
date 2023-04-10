@@ -1,0 +1,31 @@
+POST http://localhost:3000/brokers
+Content-Type: application/json
+
+{
+  "first_name": "Ruby",
+  "last_name" : "Tuesday"
+}
+
+
+POST  http://localhost:3000/:broker_id/quotations
+Content-Type: application/json
+
+{
+  "age": 22,
+  "sex": "f"
+}
+
+
+POST http://localhost:3000/:broker_id/policies
+Content-Type: application/json
+
+{
+  "quotation_id":  "8a964dfa-4640-4ad4-824c-20ab097a983f",
+  "name": "Beatrice",
+  "sex": "f",
+  "date_of_birth": "1987-01-01"
+}
+
+GET http://localhost:3000/brokers/40bb2ec9-32d4-4d5e-bce5-6ffe26cb3148/policies?policy_id=86dd90a5-2dad-4403-97d5-34439d5d7017
+Content-Type: application/json
+query_params = policy_id

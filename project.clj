@@ -10,11 +10,11 @@
                  [ring "1.9.6"]
                  [ring/ring-defaults "0.3.2"]
                  [ring/ring-json "0.5.0"]
+                 [cheshire "5.11.0"]
                  [environ "1.2.0"]
                  [org.clojure/tools.logging "0.2.3"]
                  [log4j/log4j "1.2.16"]
-                 [funcool/clojure.jdbc "0.9.0"]
-                 [org.clojure/data.json "0.2.6"] 
+                 [funcool/clojure.jdbc "0.9.0"] 
                  [org.clojure/java.jdbc "0.7.12"]]
   :plugins [[lein-environ "1.2.0"]]
   :main ^:skip-aot broker.core
