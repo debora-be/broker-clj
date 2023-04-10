@@ -7,12 +7,12 @@ Content-Type: application/json
 }
 
 
-POST  http://localhost:3000/:broker_id/quotations
+POST  http://localhost:3000/:broker_id/quotes
 Content-Type: application/json
 
 {
   "age": 22,
-  "sex": "f"
+  "sex": "m"
 }
 
 
@@ -26,6 +26,6 @@ Content-Type: application/json
   "date_of_birth": "1987-01-01"
 }
 
-GET http://localhost:3000/brokers/40bb2ec9-32d4-4d5e-bce5-6ffe26cb3148/policies?policy_id=86dd90a5-2dad-4403-97d5-34439d5d7017
+GET http://localhost:3000/brokers/:broker_id/policies?policy_id=policy_id
 Content-Type: application/json
 query_params = policy_id
