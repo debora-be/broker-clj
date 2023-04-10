@@ -8,14 +8,14 @@
 (defn validate-broker
   "validate if a broker has all the required data"
   [broker-map]
-  (let [valid-keys #{:first_name :last_name}] 
+  (let [valid-keys #{:first_name :last_name}]
     (every?
-      (fn [[k v]]
-        (and (not (empty? (str/trim v)))
-             (valid-keys k) 
-             (string? v) 
-             (<= 2 (count v) 20))) 
-      broker-map)))
+     (fn [[k v]]
+       (and (not (empty? (str/trim v)))
+            (valid-keys k)
+            (string? v)
+            (<= 2 (count v) 20)))
+     broker-map)))
 
 (defn validate-quote
   "validate if a quote has all the required data"
@@ -23,12 +23,11 @@
   (let [valid-keys #{:age :sex}
         age (:age quote-map)
         sex (:sex quote-map)]
-    (and (number? age)
-         (>= age 0)
-         (<= age 99)
-         (string? sex)
-         (some #{"f" "F" "m" "M" "n" "N"} (str/lower-case sex)))
-    true))
+    (every? true? [(number? age)
+                   (>= age 0)
+                   (<= age 99)
+                   (string? sex)
+                   (not (empty? (str/trim sex)))])))
 
 (defn validate-policy
   "validate if a policy has all the required data"
@@ -42,8 +41,9 @@
     (and (< (- current-year date-of-birth-year) 99)
          (string? name)
          (string? sex)
-         (some #{"f" "F" "m" "M" "n" "N"} (str/lower-case sex)))
-    true))
+         (not (empty? (str/trim name)))
+         (not (empty? (str/trim sex)))
+         (<= 2 (count name) 20))))
 
 
 
