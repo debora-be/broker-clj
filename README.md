@@ -38,11 +38,11 @@ Content-Type: application/json
 _RESPONSE_
 ```json
 {
-		"broker_id": "71161e53-3c4d-45a5-b499-18650715b995",
-		"created_at": "2023-04-10T18:00:41Z",
-		"first_name": "Ruby",
-		"last_name": "Tuesday"
-	}
+	"broker_id": "71161e53-3c4d-45a5-b499-18650715b995",
+	"created_at": "2023-04-10T18:00:41Z",
+	"first_name": "Ruby",
+	"last_name": "Tuesday"
+}
 ```
 
 **POST** </br>
@@ -57,12 +57,12 @@ Content-Type: application/json
 _RESPONSE_
 ```json
 {
-		"quotation_id": "515341a1-a5b8-4af3-915d-931deeb7e919",
-		"broker_id": "71161e53-3c4d-45a5-b499-18650715b995",
-		"created_at": "2023-04-10T18:03:28Z",
-		"expire_at": "2023-04-10",
-		"price": 86.26
-	}
+	"quotation_id": "515341a1-a5b8-4af3-915d-931deeb7e919",
+	"broker_id": "71161e53-3c4d-45a5-b499-18650715b995",
+	"created_at": "2023-04-10T18:03:28Z",
+	"expire_at": "2023-04-10",
+	"price": 86.26
+}
 ```
 
 **POST** </br>
@@ -79,13 +79,13 @@ Content-Type: application/json
 _RESPONSE_
 ```json
 {
-		"policy_id": "307ff969-f56c-47dd-b0a3-f2d62ed45e87",
-		"broker_id": "71161e53-3c4d-45a5-b499-18650715b995",
-		"created_at": "2023-04-10T18:04:31Z",
-		"date_of_birth": "1993-06-26",
-		"name": "Mighty Maria",
-		"sex": "f"
-	}
+	"policy_id": "307ff969-f56c-47dd-b0a3-f2d62ed45e87",
+	"broker_id": "71161e53-3c4d-45a5-b499-18650715b995",
+	"created_at": "2023-04-10T18:04:31Z",
+	"date_of_birth": "1993-06-26",
+	"name": "Mighty Maria",
+	"sex": "f"
+}
 ```
 
 **GET** </br>
