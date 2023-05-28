@@ -1,6 +1,8 @@
-This is API connects partner brokers to the main insurer, generating policies according to the given information. In the authenticated area, the broker has full access to quotes and policies creation tools.
+# Broker
 
-# Installing
+This API connects partner brokers to the main insurer, generating policies according to the given information. In the authenticated area, the broker has full access to quotes and policies creation tools.
+
+## Installing
 
 **Broker** is set to run with Docker Compose. With this source code in your machine and local Postgres (:5432) inactive, build the container that is in the project's root following along this commands:
 
@@ -26,9 +28,9 @@ docker exec -it broker-clj-db-1 psql -U postgres
 SELECT * FROM brokers;
 ```
 
-Tests run automatically whenever the container is up.
+There is one container for unitary testing that runs automatically whenever it is up.
 
-# Requests
+## Requests
 
 Access the endpoints through the following routes and parameters:
 
@@ -88,7 +90,7 @@ _RESPONSE_
 }
 ```
 
-`GET http://localhost:3000/brokers/:broker_id/policies?policy_id=policy_id`
+`GET http://localhost:3000/brokers/:broker_id/policies?policy_id=policy_id` <br>
 _RESPONSE_
 ```json
 {

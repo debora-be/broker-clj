@@ -9,9 +9,7 @@
 
 (def x (env :x))
 
-(def token (env :token))
-
-(def options {:headers {"Authorization" token
+(def options {:headers {"X-Api-Key" x
                         "Content-Type" "application/json"}})
 
 (defn process 
@@ -27,18 +25,18 @@
 (defn post-quotation 
   "create a new quotation"
   [quote-map]
-  (process quote-map "/quotations"))
+  (process quote-map "/quotations.json"))
 
 (defn post-policy 
   "create a new policy"
   [policy-map]
-  (process policy-map "/policies"))
+  (process policy-map "/policies.json"))
 
 (defn get-policy 
   "get a policy by id"
   [policy-id]
   (let [{:keys [status headers body error] :as resp}
-        @(client/get (str base-url "/policies/" policy-id) options)]
+        @(client/get (str base-url "/get_policies/" policy-id ".json") options)]
     (if error
       error
       (cheshire/decode body))))
