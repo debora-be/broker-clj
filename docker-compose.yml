@@ -23,6 +23,3 @@ services:
     command: lein test 
     volumes: 
       - .:/tmp
-
-    
-    
